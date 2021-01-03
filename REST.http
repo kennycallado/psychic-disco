@@ -1,2 +1,25 @@
+@token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTYwOTY1ODk0N30.QdTcJS8s0ID-QF7832zzPpdnb9GsbiOT0F0ZzxuExG4'
+
 ### GET /
 GET http://localhost:3333/
+
+### POST /register
+POST http://localhost:3333/register
+Content-Type: application/json
+
+{
+  "username": "kenny",
+  "email": "kenny@callado.es",
+  "password": "callado"
+}
+
+### POST /login
+POST http://localhost:3333/login
+Content-Type: application/json
+
+{
+  "email": "kenny@callado.es",
+  "password": "callado"
+}
+
+### 

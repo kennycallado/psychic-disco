@@ -16,6 +16,11 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.get('/', () => {
-  return { greeting: 'Hello world in JSON' }
-})
+Route.post('/register', 'AuthController.register')
+Route.post('/login', 'AuthController.login')
+// creo que esta estaría mejor en PostController, sería lógico
+Route.get('/posts', 'AuthController.getPosts')
+
+Route.put('/posts/:id', 'PostController.update').middleware('auth')
+Route.delete('posts/id', 'PostController.delete').middleware('auth')
+Route.post('/posts', 'PostController.store').middleware('auth')
